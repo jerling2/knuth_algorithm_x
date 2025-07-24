@@ -1,0 +1,48 @@
+Matrix Format for a "Doubly Linked Matrix" or 2D Linked List.
+
+(special) 'Comment rows' start with '%' and prelude all other rows.
+
+e.g.
+
+% Description: This line is ignored!
+
+(special) The 'size row' is the first non-commented row, and contains the number of cols.
+
+e.g.
+
+% There are ten columns to this matrix.
+10
+...rest of the rows.
+
+(otherwise) The rest of the rows have the following format: 
+col1 col2 col3 ...coln,val1 val2, val3 ... valn
+
+Logically,
+(column(s) token),(value(s) token)
+
+Where the large tokens are delimited by a comma,
+and the subtokens are delimited by a space.
+
+When parsed, the line:
+col1 col2 col3 ...coln,val1 val2, val3 ... valn
+
+encodes the row:
+Row = (col1, val1), (col2, val2), ... (coln, valn)
+
+e.g.
+
+In the string "theatreegg":
+
+5 6 7 8,t r e e
+
+represents the word "tree".
+
+8 9 10,e g g
+
+represents the word "egg".
+
+3 4 5,e a t
+
+represents the word "eat".
+
+and so on.
